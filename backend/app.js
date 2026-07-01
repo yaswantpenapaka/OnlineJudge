@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import authRoutes from './routes/auth.routes.js';
 import errorHandler from './middlewares/error.middleware.js';
+import problemRoutes from './routes/problem.routes.js';
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(cookieParser());
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/problems', problemRoutes);
 
 // Health Check Route
 app.get('/', (req, res) => {
